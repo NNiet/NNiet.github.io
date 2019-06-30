@@ -1,0 +1,55 @@
+<!DOCTPE Hthl>
+<html>
+    <head>
+        <mata charset='utf-8' />
+    <script>
+        var name = "進度條";
+        var loading = "讀取：";
+        var percent = 100 + '%';
+        console.log(name, loading);
+        document.write(loading + ' ' + name + '<p>');
+        document.write(name + ' ' + percent);
+        document.write('<hr />');
+
+    </script>
+    </head>
+    <body>
+        <h1 id="title">標題</h1><!--被選對象-->
+        <button type="button" onclick="clickme1();">換標題1</button>
+        <p onclick="clickme2();">換標題2</p>
+        <hr />
+        <button type="button" onclick="ContentChange();">換內容</button>
+        <p class="content">content1</p>
+        <p class="content">content2</p>
+        <p class="content">content3</p>
+        <p class="content">content4</p>
+        <p class="content">content5</p>
+        
+        <input name="search" type="search" placeholder="搜尋" />
+    </body>
+    <script>
+        var clickme1 = function(){
+            var title = document.getElementById("title");//id Selector
+            title.innerHTML = "我是新標題1";
+        }
+        var clickme2 = function(){
+            var title = document.getElementById("title");//id Selector
+            title.innerHTML = "我是新標題2";
+        }
+        var ContentChange = function(){
+            //class
+            var Newcontent1 = document.getElementsByClassName("content");
+            console.log(Newcontent1);
+            var changecontent1 = Newcontent1[0];
+            changecontent1.innerHTML = "新內容1";
+            //tag
+            var Newcontent2 = document.getElementsByTagName("p");
+            console.log(Newcontent2);
+            var changecontent2 = Newcontent2[3];
+            changecontent2.innerHTML = "新內容2";
+        }
+        //name
+        var inputs = document.getElementsByName("search");
+        console.log(inputs);
+        </script>
+</html>
